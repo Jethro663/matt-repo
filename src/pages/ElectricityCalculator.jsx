@@ -112,7 +112,7 @@ function ElectricityCalculator() {
                 id="customerName"
                 type="text"
                 className="calc-input"
-                placeholder="e.g. Juan Dela Cruz"
+                placeholder="Customer Name:"
                 value={customerName}
                 onChange={handleCustomerNameChange}
               />
@@ -128,7 +128,7 @@ function ElectricityCalculator() {
                 min="0"
                 step="any"
                 className="calc-input"
-                placeholder="e.g. 250"
+                placeholder="Consumption:"
                 value={consumption}
                 onChange={handleConsumptionChange}
               />
