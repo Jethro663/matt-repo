@@ -4,6 +4,42 @@ import '../styles/Login.css'
 const VALID_USERNAME = 'admin'
 const VALID_PASSWORD = 'react123'
 
+function EyeOpenIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  )
+}
+
+function EyeOffIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 3l18 18" />
+      <path d="M10.58 10.58A2 2 0 0 0 13.42 13.42" />
+      <path d="M9.88 5.08A10.94 10.94 0 0 1 12 5c6.5 0 10 7 10 7a17.8 17.8 0 0 1-4.04 5.06" />
+      <path d="M6.61 6.61A17.7 17.7 0 0 0 2 12s3.5 7 10 7a11.2 11.2 0 0 0 5.39-1.61" />
+    </svg>
+  )
+}
+
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -92,7 +128,6 @@ function Login() {
   return (
     <section className="login-page">
       <div className="login-card">
-        <p className="login-demo-account">Demo account: admin / react123</p>
         <h1>Login Authentication</h1>
 
         <form onSubmit={handleSubmit} className="login-form">
@@ -112,7 +147,7 @@ function Login() {
 
           <div className="login-field">
             <label htmlFor="password">Password</label>
-            <div className="login-password-row">
+            <div className="login-password-field">
               <input
                 id="password"
                 name="password"
@@ -125,11 +160,13 @@ function Login() {
               />
               <button
                 type="button"
-                className="login-toggle-password"
+                className="login-password-toggle"
                 onClick={() => setShowPassword((prevState) => !prevState)}
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
+                title={showPassword ? 'Hide password' : 'Show password'}
+                aria-pressed={showPassword}
               >
-                {showPassword ? 'Hide' : 'Show'}
+                {showPassword ? <EyeOpenIcon /> : <EyeOffIcon />}
               </button>
             </div>
           </div>

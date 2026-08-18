@@ -16,15 +16,6 @@
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
 }
 
-.login-demo-account {
-  margin: 0 0 0.85rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #0f766e;
-}
-
 .login-card h1,
 .login-result h2 {
   margin: 0 0 1.5rem;
@@ -64,7 +55,7 @@
 
 .login-field input:focus,
 .login-button:focus-visible,
-.login-toggle-password:focus-visible,
+.login-password-toggle:focus-visible,
 .logout-button:focus-visible {
   outline: 3px solid rgba(59, 130, 246, 0.35);
   outline-offset: 2px;
@@ -75,16 +66,46 @@
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.09);
 }
 
-.login-password-row {
-  display: flex;
-  gap: 0.75rem;
+.login-password-field {
+  position: relative;
 }
 
-.login-password-row input {
-  flex: 1;
+.login-password-field input {
+  width: 100%;
+  padding-right: 3rem;
 }
 
-.login-toggle-password,
+.login-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.login-password-toggle:hover,
+.login-password-toggle:focus-visible {
+  background: rgba(148, 163, 184, 0.12);
+  color: #0f172a;
+}
+
+.login-password-toggle svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+}
+
 .login-button,
 .logout-button {
   border: none;
@@ -94,24 +115,17 @@
   transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
-.login-toggle-password {
-  padding: 0.8rem 0.9rem;
-  background: #e2e8f0;
-  color: #0f172a;
-}
-
-.login-toggle-password:hover,
-.login-button:hover,
-.logout-button:hover {
-  transform: translateY(-1px);
-}
-
 .login-button,
 .logout-button {
   padding: 0.9rem 1.2rem;
   background: linear-gradient(135deg, #2563eb, #0f766e);
   color: #ffffff;
   box-shadow: 0 14px 24px rgba(37, 99, 235, 0.2);
+}
+
+.login-button:hover,
+.logout-button:hover {
+  transform: translateY(-1px);
 }
 
 .login-feedback {
@@ -151,11 +165,6 @@
     padding: 1.4rem 1rem;
   }
 
-  .login-password-row {
-    flex-direction: column;
-  }
-
-  .login-toggle-password,
   .login-button,
   .logout-button {
     width: 100%;
