@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import ElectricityCalculator from './pages/ElectricityCalculator'
 import Activity5 from './Activity5'
+import PasswordStrengthChecker from './PasswordStrengthChecker'
 import './App.css'
 
 function App() {
@@ -27,11 +28,7 @@ function App() {
     }
 
     if (activePage === 'activity3') {
-      return (
-        <div className="portal-placeholder">
-          Activity 3 will be added by another team member.
-        </div>
-      )
+      return <PasswordStrengthChecker />
     }
 
     if (activePage === 'activity4') {
