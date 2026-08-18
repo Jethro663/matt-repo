@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Activity5 from './Activity5'
 import './App.css'
 
 function App() {
@@ -28,7 +29,11 @@ function App() {
       return <div className="portal-placeholder">Activity 4 will be added by another team member.</div>
     }
 
-    return <div className="portal-placeholder">Activity 5 will be added by another team member.</div>
+    if (activePage === 'activity5') {
+      return <Activity5 />
+    }
+
+    return null
   }
 
   return (
