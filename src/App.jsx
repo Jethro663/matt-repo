@@ -1,11 +1,12 @@
-import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import ElectricityCalculator from "./pages/ElectricityCalculator";
-import GradeEvaluation from "./pages/GradeEvaluation";
-import EmployeeAttendanceChecker from "./pages/EmployeeAttendanceChecker";
-import "./App.css";
+import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import ElectricityCalculator from './pages/ElectricityCalculator'
+import GradeEvaluation from './pages/GradeEvaluation'
+import EmployeeAttendanceChecker from './pages/EmployeeAttendanceChecker'
+import PasswordStrengthChecker from './pages/PasswordStrengthChecker'
+import './App.css'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
@@ -24,7 +25,7 @@ function App() {
     }
 
     if (activePage === 'activity3') {
-      return <div className="portal-placeholder">Activity 3 will be added by another team member.</div>
+      return <PasswordStrengthChecker />
     }
 
     if (activePage === 'activity4') {
@@ -35,7 +36,11 @@ function App() {
       return <EmployeeAttendanceChecker />
     }
 
-
+    return (
+      <div className="portal-placeholder">
+        Select an activity from the navigation.
+      </div>
+    )
   }
 
   return (
