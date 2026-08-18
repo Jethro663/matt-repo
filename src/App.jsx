@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import ElectricityCalculator from './pages/ElectricityCalculator'
+import Activity5 from './Activity5'
 import './App.css'
 
 function App() {
@@ -18,18 +19,34 @@ function App() {
     }
 
     if (activePage === 'activity2') {
-      return <div className="portal-placeholder">Activity 2 will be added by another team member.</div>
+      return (
+        <div className="portal-placeholder">
+          Activity 2 will be added by another team member.
+        </div>
+      )
     }
 
     if (activePage === 'activity3') {
-      return <div className="portal-placeholder">Activity 3 will be added by another team member.</div>
+      return (
+        <div className="portal-placeholder">
+          Activity 3 will be added by another team member.
+        </div>
+      )
     }
 
     if (activePage === 'activity4') {
       return <ElectricityCalculator />
     }
 
-    return <div className="portal-placeholder">Activity 5 will be added by another team member.</div>
+    if (activePage === 'activity5') {
+      return <Activity5 />
+    }
+
+    return (
+      <div className="portal-placeholder">
+        Activity 5 will be added by another team member.
+      </div>
+    )
   }
 
   return (
